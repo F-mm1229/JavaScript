@@ -19,6 +19,8 @@
 //
 // Good luck with that door policy!
 
+import { Linter } from "eslint";
+
 /**
  * Respond with the correct character, given the line of the
  * poem, if this were said at the front door.
@@ -27,6 +29,7 @@
  * @returns {string}
  */
 export function frontDoorResponse(line) {
+  return line[0];
   throw new Error('Remove this line and implement the function');
 }
 
@@ -38,6 +41,7 @@ export function frontDoorResponse(line) {
  * @returns {string} the front door password
  */
 export function frontDoorPassword(word) {
+  return word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
   throw new Error('Remove this line and implement the function');
 }
 
@@ -49,6 +53,7 @@ export function frontDoorPassword(word) {
  * @returns {string}
  */
 export function backDoorResponse(line) {
+  return line.trim().slice(-1);
   throw new Error('Remove this line and implement the function');
 }
 
@@ -60,5 +65,6 @@ export function backDoorResponse(line) {
  * @returns {string} the back door password
  */
 export function backDoorPassword(word) {
+  return frontDoorPassword(word) + ", please";
   throw new Error('Remove this line and implement the function');
 }
